@@ -1,0 +1,112 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.splash-screen{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.splash-screen button{
+    margin-top: 20px;
+    padding: 10px;
+    font-size: large;
+}
+.container{
+    /* visibility: hidden; */
+    display: flex;
+    padding: 40px;
+    margin: 100px 100px;
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+.container[size="A4"]{
+    width: 21cm;
+    height: 29.7cm; 
+}
+.top-bg{
+    height: 166px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("Assets/Top\ Masjid\ Image.png");
+}
+
+.prayer-title{
+    text-align: center;
+    color: #fff;
+    background-image: url(Assets/Top\ Title\ Rectangle.png);
+}
+.prayer-title p{
+    font-size: small;
+    margin-bottom: 5px;
+    margin-top: 0;
+    padding-top: 7px;
+}
+.prayer-title h4{
+    margin: 5px;
+    padding-bottom: 10px;
+}
+.prayer-title sup{
+    font-size: 8px;
+}
+.time-grid{
+    display: grid;
+    background-color: #26a4d3;
+    grid-template-columns: repeat(13, 60px);
+    grid-template-rows: repeat(31, 1fr);
+    grid-gap: 1.1px;
+    /* height: 650px; */
+    /* height: 583px; */
+}
+.bottom-jumma p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: small;
+    color: #fff;
+    background-image: url(Assets/Bottom\ Jumua\ Bar.png);
+}
+footer .important{
+    display: flex;
+    font-size: small;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+footer .important::before,
+footer .important::after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    width: 10%;
+}
+footer{
+    margin: 0;
+    background-image: url(Assets/Bottom\ Container.png);
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+footer div p{
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 13.2px
+}
+footer .footer-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-bottom img{
+    margin: 0 10px;
+    height: 50px;
+}
