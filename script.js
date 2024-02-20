@@ -19,21 +19,8 @@ fetch("time-inputs.html")
         timeInputs.innerHTML = data;
     });
 window.onload = () => {
-    // setTimeout(function() {
-    //     document.querySelector('.splash-image').style.display='none'
-    //     document.querySelector('.container').style.visibility= "visible";
-    //     btnSkip.style.display = "none";
-    // }, 10000);
-
-    // const audio = document.querySelector(".myAudio");
-    // const btnSkip = document.querySelector(".btn-skip");
-    // btnSkip.addEventListener("click",() => {
-    //     document.querySelector('.splash-image').style.display='none'
-    //     document.querySelector('.container').style.visibility= "visible";
-    //     btnSkip.style.display = "none";
-    //     audio.muted = true;
-    // });"
     var engMonth = document.getElementById("eng-month");
+    if(engMonth){
     engMonth.addEventListener("keydown", (e) => {
 
         if (e.key === "Enter") {
@@ -237,4 +224,5 @@ window.onload = () => {
             fetchDate();
         }
     });
+}
 }
