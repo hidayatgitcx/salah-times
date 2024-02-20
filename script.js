@@ -21,6 +21,7 @@ fetch("time-inputs.html")
 window.onload = () => {
     var engMonth = document.getElementById("eng-month");
     if(engMonth){
+        console.log("loaded");
     engMonth.addEventListener("keydown", (e) => {
 
         if (e.key === "Enter") {
