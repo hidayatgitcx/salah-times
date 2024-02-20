@@ -1,27 +1,7 @@
-const heading = document.querySelector(".top-bg");
-fetch("heading.html")
-    .then(res => res.text())
-    .then(data => {
-        heading.innerHTML = data;
-    });
-
-const tableTitles = document.querySelector(".table-titles");
-fetch("table-titles.html")
-    .then(res => res.text())
-    .then(data => {
-        tableTitles.innerHTML = data;
-    });
-
-const timeInputs = document.querySelector(".time-grid");
-fetch("time-inputs.html")
-    .then(res => res.text())
-    .then(data => {
-        timeInputs.innerHTML = data;
-    });
 window.onload = () => {
     var engMonth = document.getElementById("eng-month");
     if(engMonth){
-        console.log("loaded");
+        console.log("loaded")
     engMonth.addEventListener("keydown", (e) => {
 
         if (e.key === "Enter") {
