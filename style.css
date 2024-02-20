@@ -110,3 +110,109 @@ footer .footer-bottom{
     margin: 0 10px;
     height: 50px;
 }
+.topAll-div {
+    color: gray;
+    height: 160px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .topLogo-div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #top-logo {
+    width: 160px;
+    margin-bottom: 30px;
+  }
+  .topLogo-div * {
+    background: transparent;
+    border: none;
+    text-align: center;
+    margin-top: 6px;
+  }
+  #eng-month {
+    outline: none;
+    color: gray;
+    width: 300px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  #arab-month {
+    outline: none;
+    color: gray;
+    width: 300px;
+  }
+  .top-left {
+    display: flex;
+    align-items: center;
+    align-items: flex-end;
+  }
+  .top-left p {
+    font-size: 10px;
+    margin: 0;
+    margin-left: 5px;
+  }
+  #call-icon {
+    display: flex;
+    align-items: center;
+    width: 8px;
+  }
+  .top-right {
+    display: flex;
+    align-items: flex-end;
+  }
+  #web-image {
+    height: 8px;
+    margin-right: 5px;
+  }
+  .top-right p {
+    margin: 0;
+    font-size: 10px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(13, 1fr);
+    grid-gap: 1px;
+  }
+  .grid-container div {
+    font-size: x-small;
+    color: #fff;
+    background-color: #26a4d3;
+    grid-gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .grid-month {
+    grid-column: span 3;
+    text-align: center;
+  }
+  .grid-fajr {
+    grid-column: span 2;
+  }
+  .grid-sunrise {
+    grid-row: span 2;
+  }
+  .grid-jummah {
+    grid-row: span 2;
+  }
+  .grid-asr {
+    grid-column: span 2;
+  }
+  .grid-maghrib {
+    grid-row: span 2;
+  }
+  .grid-ishaa {
+    grid-column: span 2;
+  }
+  .time-grid input {
+    border: none;
+    height: 17px;
+    text-align: center;
+    outline: none;
+  }
