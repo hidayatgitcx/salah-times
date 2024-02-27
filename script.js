@@ -1,10 +1,8 @@
 window.onload = () => {
     var engMonth = document.getElementById("eng-month");
-    if(engMonth){
+    if (engMonth) {
         console.log("loaded")
-    engMonth.addEventListener("keydown", (e) => {
-
-        if (e.key === "Enter") {
+        engMonth.addEventListener("input", () => {
             var splitDate = engMonth.value.toLowerCase().split(" ");
             switch (splitDate[0]) {
                 case "january":
@@ -77,18 +75,18 @@ window.onload = () => {
                         }
                         if (inputFields[count].value == "Fri") {
                             count--;
-                            for (var i = 0; i < 3; i++) {
+                            for (var i = 0; i < 13; i++) {
                                 inputFields[count].style.fontWeight = "900";
                                 count++;
                             }
-                            count -= 2;
+                            count -= 12;
                         } else {
                             count--;
-                            for (var i = 0; i < 3; i++) {
+                            for (var i = 0; i < 13; i++) {
                                 inputFields[count].style.fontWeight = "400";
                                 count++;
                             }
-                            count -= 2;
+                            count -= 12;
                         }
                         count++;
                         inputFields[count].value = date.data[dayCount].hijri.day;
@@ -129,7 +127,6 @@ window.onload = () => {
                     let dateString = prayerTime[0][5].d_date;
                     let splitString = dateString.split("-");
                     console.log(splitString[1]);
-                    // Do it like If it is january use it like prayertime[0][january count];
                     let monthYear = document.getElementById("eng-month").value.toLowerCase().split(" ");
                     let month = monthYear[0];
                     switch (month) {
@@ -171,28 +168,40 @@ window.onload = () => {
                             break;
                     }
                     prayerTime.forEach(function() {
+                        let correctTime;
                         let i = 3;
+                        console.log(countTime);
                         for (let x = 1; x < 32; x++) {
                             for (let counter = 3; counter < 13; counter++) {
-                                inputFieldTime[i].value = prayerTime[0][countTime].fajr_begins;
+                                correctTime =  prayerTime[0][countTime].fajr_begins.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 i++;
-                                inputFieldTime[i].value = prayerTime[0][countTime].fajr_jamah;
+                                correctTime =  prayerTime[0][countTime].fajr_jamah.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 i++;
-                                inputFieldTime[i].value = prayerTime[0][countTime].sunrise;
+                                correctTime =  prayerTime[0][countTime].sunrise.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 i++;
-                                inputFieldTime[i].value = prayerTime[0][countTime].zuhr_begins;
+                                correctTime =  prayerTime[0][countTime].zuhr_begins.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 i++;
-                                inputFieldTime[i].value = prayerTime[0][countTime].zuhr_jamah;
+                                correctTime =  prayerTime[0][countTime].zuhr_jamah.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 i++;
-                                inputFieldTime[i].value = prayerTime[0][countTime].asr_mithl_1;
+                                correctTime =  prayerTime[0][countTime].asr_mithl_1.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 i++;
-                                inputFieldTime[i].value = prayerTime[0][countTime].asr_jamah;
+                                correctTime =  prayerTime[0][countTime].asr_jamah.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 i++;
-                                inputFieldTime[i].value = prayerTime[0][countTime].maghrib_begins;
+                                correctTime =  prayerTime[0][countTime].maghrib_begins.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 i++;
-                                inputFieldTime[i].value = prayerTime[0][countTime].isha_begins;
+                                correctTime =  prayerTime[0][countTime].isha_begins.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 i++;
-                                inputFieldTime[i].value = prayerTime[0][countTime].isha_jamah;
+                                correctTime =  prayerTime[0][countTime].isha_jamah.split(":");
+                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
                                 countTime++;
                                 i += 4;
                             }
@@ -200,10 +209,8 @@ window.onload = () => {
                     })
                 }
             }
-
             fetchTimings();
             fetchDate();
-        }
-    });
-}
+        });
+    }
 }
