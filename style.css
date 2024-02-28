@@ -1,30 +1,15 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
-}
-.splash-screen{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-}
-.splash-screen button{
-    margin-top: 20px;
-    padding: 10px;
-    font-size: large;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
 }
 .container{
-    /* visibility: hidden; */
-    display: flex;
     padding: 40px;
-    margin: 100px 100px;
     background: white;
     display: block;
     margin: 0 auto;
     margin-bottom: 0.5cm;
-    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
 }
 .container[size="A4"]{
     width: 21cm;
@@ -63,6 +48,12 @@
     grid-gap: 1.1px;
     /* height: 650px; */
     /* height: 583px; */
+}
+.time-grid input {
+  border: 1px solid #26a4d3;
+  height: 15px;
+  text-align: center;
+  outline: none;
 }
 .bottom-jumma p{
     display: flex;
@@ -176,13 +167,12 @@ footer .footer-bottom{
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(13, 1fr);
-    grid-gap: 1px;
   }
   .grid-container div {
+    border: 1px solid;
     font-size: x-small;
     color: #fff;
     background-color: #26a4d3;
-    grid-gap: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -209,10 +199,4 @@ footer .footer-bottom{
   }
   .grid-ishaa {
     grid-column: span 2;
-  }
-  .time-grid input {
-    border: none;
-    height: 17px;
-    text-align: center;
-    outline: none;
   }
