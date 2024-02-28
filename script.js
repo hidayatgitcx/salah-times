@@ -3,6 +3,7 @@ window.onload = () => {
     if (engMonth) {
         console.log("loaded")
         engMonth.addEventListener("input", () => {
+            let monthToNumber;
             var splitDate = engMonth.value.toLowerCase().split(" ");
             switch (splitDate[0]) {
                 case "january":
@@ -42,9 +43,28 @@ window.onload = () => {
                     monthToNumber = 12;
                     break;
             }
-            var yearFull = document.getElementById("eng-month").value.split(" ");
+            
+            let z = 0
+            let y = 13;
+            let forFeb = document.querySelectorAll(".forFeb");
+            forFeb.forEach(function(){
+                if(splitDate[0] === "february"){
+                    forFeb[z].style.visibility = "hidden";
+                    z++;
+                }
+                else if(splitDate[0] === "april" || splitDate[0] === "june" || splitDate[0] === "september" || splitDate[0] === "november"){
+                    forFeb[y].style.visibility = "hidden";
+                    y++;    
+                }
+                else {
+                    forFeb[z].style.visibility = "visible";
+                    z++;
+                }
+            });
+
             let count = 0;
-            let dayCount = 0
+            let dayCount = 0;
+            var yearFull = document.getElementById("eng-month").value.split(" ");
             const apiUrl = "https://api.aladhan.com/v1/gToHCalendar/";
             async function fetchDate() {
                 const response = await fetch(apiUrl + `${monthToNumber}/${yearFull[1]}`);
@@ -94,6 +114,7 @@ window.onload = () => {
                         dayCount++;
                     });
                     var shortenUrl = date.data[0].hijri;
+                    console.log("Last Date");
                     console.log(date.data[date.data.length - 1]);
                     if (shortenUrl.month.en == "Jumādá al-ākhirah") {
                         hijriField.innerHTML = "Jumādā ath-Thānī" + " - " + date.data[date.data.length - 1].hijri.month.en + ", " + shortenUrl.year + " AH";
