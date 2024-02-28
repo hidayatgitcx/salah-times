@@ -43,6 +43,7 @@ window.onload = () => {
                     monthToNumber = 12;
                     break;
             }
+            
             let z = 0
             let y = 13;
             let forFeb = document.querySelectorAll(".forFeb");
@@ -60,6 +61,7 @@ window.onload = () => {
                     z++;
                 }
             });
+
             let count = 0;
             let dayCount = 0;
             var yearFull = document.getElementById("eng-month").value.split(" ");
@@ -71,6 +73,7 @@ window.onload = () => {
                     var inputFields = document.querySelectorAll(".time-grid input");
                     var hijriField = document.querySelector(".topLogo-div p");
                     var titleMonth = document.querySelector(".table-titles div div");
+
                     date.data.forEach(function() {
                         inputFields[count].value = date.data[dayCount].gregorian.day;
                         count++
