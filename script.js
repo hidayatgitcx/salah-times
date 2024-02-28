@@ -114,8 +114,6 @@ window.onload = () => {
                         dayCount++;
                     });
                     var shortenUrl = date.data[0].hijri;
-                    console.log("Last Date");
-                    console.log(date.data[date.data.length - 1]);
                     if (shortenUrl.month.en == "Jumādá al-ākhirah") {
                         hijriField.innerHTML = "Jumādā ath-Thānī" + " - " + date.data[date.data.length - 1].hijri.month.en + ", " + shortenUrl.year + " AH";
                     } else if (date.data[date.data.length - 1].hijri.month.en == "Jumādá al-ākhirah") {
@@ -143,11 +141,8 @@ window.onload = () => {
                     let countTime = 0;
                     let inputFieldTime = document.querySelectorAll(".time-grid input");
                     var prayerTime = await response.json();
-                    console.log(prayerTime[0]);
-                    console.log(prayerTime[0][5]);
                     let dateString = prayerTime[0][5].d_date;
                     let splitString = dateString.split("-");
-                    console.log(splitString[1]);
                     let monthYear = document.getElementById("eng-month").value.toLowerCase().split(" ");
                     let month = monthYear[0];
                     switch (month) {
@@ -191,7 +186,6 @@ window.onload = () => {
                     prayerTime.forEach(function() {
                         let correctTime;
                         let i = 3;
-                        console.log(countTime);
                         for (let x = 1; x < 32; x++) {
                             for (let counter = 3; counter < 13; counter++) {
                                 correctTime =  prayerTime[0][countTime].fajr_begins.split(":");
