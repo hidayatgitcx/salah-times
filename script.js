@@ -47,18 +47,37 @@ window.onload = () => {
             let z = 0
             let y = 13;
             let forFeb = document.querySelectorAll(".forFeb");
+            let shrinkBg = document.querySelector(".time-grid")
+            if(splitDate[0] === "february"){
+                shrinkBg.style.height = "553px";
+            }
+            else if(splitDate[0] === "april" || splitDate[0] === "june" || splitDate[0] === "september" || splitDate[0] === "november"){
+                shrinkBg.style.height = "572.1px";
+            }
+            else{
+                shrinkBg.style.height = "590.81px";
+            }
             forFeb.forEach(function(){
                 if(splitDate[0] === "february"){
+                    if(forFeb[z])
+                    {
                     forFeb[z].style.visibility = "hidden";
                     z++;
                 }
+                }
                 else if(splitDate[0] === "april" || splitDate[0] === "june" || splitDate[0] === "september" || splitDate[0] === "november"){
+                    if(forFeb[y])
+                    {
                     forFeb[y].style.visibility = "hidden";
-                    y++;    
+                    y++;
+                }   
                 }
                 else {
+                    if(forFeb[z])
+                    {
                     forFeb[z].style.visibility = "visible";
                     z++;
+                }
                 }
             });
 
@@ -76,7 +95,7 @@ window.onload = () => {
 
                     date.data.forEach(function() {
                         inputFields[count].value = date.data[dayCount].gregorian.day;
-                        count++
+                        count++;
                         inputFields[count].value = date.data[dayCount].gregorian.weekday.en.slice(0, 3);
                         if (inputFields[count].value == "Mon") {
                             count--;
