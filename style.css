@@ -40,22 +40,31 @@
 .prayer-title sup{
     font-size: 8px;
 }
+/* .input-color{
+  
+  height: 553px;
+} */
 .time-grid{
     display: grid;
     background-color: #26a4d3;
     grid-template-columns: repeat(13, 60px);
     grid-template-rows: repeat(31, 1fr);
     grid-gap: 1.1px;
-    /* height: 650px; */
-    /* height: 583px; */
+    width: 793px;
+    /* height: 590.81px; */
+    /* height: 572.1px; */
+    /* height: 553px; */
 }
 .time-grid input {
-  border: 1px solid #26a4d3;
+  border: none;
+  border-right: 1px solid #26a4d3;
+  border-bottom: 1px solid #26a4d3;
   height: 15px;
   text-align: center;
   outline: none;
 }
 .bottom-jumma p{
+    margin: 5px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,7 +118,7 @@ footer .footer-bottom{
     justify-content: space-between;
   }
   .topLogo-div {
-    padding: 10px;
+    padding: 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,6 +146,7 @@ footer .footer-bottom{
     width: 300px;
   }
   .top-left {
+    padding: 1px;
     display: flex;
     align-items: center;
     align-items: flex-end;
@@ -152,6 +162,7 @@ footer .footer-bottom{
     width: 8px;
   }
   .top-right {
+    padding: 1px;
     display: flex;
     align-items: flex-end;
   }
