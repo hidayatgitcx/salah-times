@@ -153,7 +153,7 @@ window.onload = () => {
                 }
             }
 
-            const apiTimeUrl = "https://masjid.connextar.com/?rest_route=/dpt/v1/prayertime&filter=year";
+            const apiTimeUrl = "https://staging.albaseerah.com/?rest_route=/dpt/v1/prayertime&filter=year";
             async function fetchTimings() {
                 const response = await fetch(apiTimeUrl);
                 if (response.ok) {
