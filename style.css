@@ -21,6 +21,7 @@
     background-size: contain;
     background-image: url("Assets/Top\ Masjid\ Image.png");
 }
+
 .prayer-title{
     text-align: center;
     color: #fff;
@@ -50,6 +51,9 @@
     grid-template-rows: repeat(31, 1fr);
     grid-gap: 1.1px;
     width: 793px;
+    /* height: 590.81px; */
+    /* height: 572.1px; */
+    /* height: 553px; */
 }
 .time-grid input {
   border: none;
