@@ -43,7 +43,6 @@ window.onload = () => {
                     monthToNumber = 12;
                     break;
             }
-            
             let z = 0
             let y = 13;
             let forFeb = document.querySelectorAll(".forFeb");
