@@ -43,41 +43,34 @@ window.onload = () => {
                     monthToNumber = 12;
                     break;
             }
-            
+
             let z = 0
             let y = 13;
             let forFeb = document.querySelectorAll(".forFeb");
             let shrinkBg = document.querySelector(".time-grid")
-            if(splitDate[0] === "february"){
+            if (splitDate[0] === "february") {
                 shrinkBg.style.height = "553px";
-            }
-            else if(splitDate[0] === "april" || splitDate[0] === "june" || splitDate[0] === "september" || splitDate[0] === "november"){
+            } else if (splitDate[0] === "april" || splitDate[0] === "june" || splitDate[0] === "september" || splitDate[0] === "november") {
                 shrinkBg.style.height = "572.1px";
-            }
-            else{
+            } else {
                 shrinkBg.style.height = "590.81px";
             }
-            forFeb.forEach(function(){
-                if(splitDate[0] === "february"){
-                    if(forFeb[z])
-                    {
-                    forFeb[z].style.visibility = "hidden";
-                    z++;
-                }
-                }
-                else if(splitDate[0] === "april" || splitDate[0] === "june" || splitDate[0] === "september" || splitDate[0] === "november"){
-                    if(forFeb[y])
-                    {
-                    forFeb[y].style.visibility = "hidden";
-                    y++;
-                }   
-                }
-                else {
-                    if(forFeb[z])
-                    {
-                    forFeb[z].style.visibility = "visible";
-                    z++;
-                }
+            forFeb.forEach(function() {
+                if (splitDate[0] === "february") {
+                    if (forFeb[z]) {
+                        forFeb[z].style.visibility = "hidden";
+                        z++;
+                    }
+                } else if (splitDate[0] === "april" || splitDate[0] === "june" || splitDate[0] === "september" || splitDate[0] === "november") {
+                    if (forFeb[y]) {
+                        forFeb[y].style.visibility = "hidden";
+                        y++;
+                    }
+                } else {
+                    if (forFeb[z]) {
+                        forFeb[z].style.visibility = "visible";
+                        z++;
+                    }
                 }
             });
 
@@ -207,35 +200,75 @@ window.onload = () => {
                         let i = 3;
                         for (let x = 1; x < 32; x++) {
                             for (let counter = 3; counter < 13; counter++) {
-                                correctTime =  prayerTime[0][countTime].fajr_begins.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].fajr_begins.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 i++;
-                                correctTime =  prayerTime[0][countTime].fajr_jamah.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].fajr_jamah.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 i++;
-                                correctTime =  prayerTime[0][countTime].sunrise.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].sunrise.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 i++;
-                                correctTime =  prayerTime[0][countTime].zuhr_begins.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].zuhr_begins.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 i++;
-                                correctTime =  prayerTime[0][countTime].zuhr_jamah.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].zuhr_jamah.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 i++;
-                                correctTime =  prayerTime[0][countTime].asr_mithl_1.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].asr_mithl_1.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 i++;
-                                correctTime =  prayerTime[0][countTime].asr_jamah.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].asr_jamah.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 i++;
-                                correctTime =  prayerTime[0][countTime].maghrib_begins.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].maghrib_begins.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 i++;
-                                correctTime =  prayerTime[0][countTime].isha_begins.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].isha_begins.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 i++;
-                                correctTime =  prayerTime[0][countTime].isha_jamah.split(":");
-                                inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                correctTime = prayerTime[0][countTime].isha_jamah.split(":");
+                                if (correctTime[0] > 12) {
+                                    inputFieldTime[i].value = correctTime[0] - 12 + ":" + correctTime[1];
+                                } else {
+                                    inputFieldTime[i].value = correctTime[0] + ":" + correctTime[1];
+                                }
                                 countTime++;
                                 i += 4;
                             }
@@ -243,8 +276,18 @@ window.onload = () => {
                     })
                 }
             }
+
             fetchTimings();
             fetchDate();
         });
     }
 }
+let colorInputs = document.querySelectorAll(".time-grid input");
+colorInputs.forEach(inputs => {
+    let initialValue = inputs.value;
+    inputs.addEventListener('input', function() {
+        if (inputs.value !== initialValue) {
+            inputs.style.backgroundColor = "#ffff90";
+        }
+    })
+})
